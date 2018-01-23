@@ -1,0 +1,10 @@
+---
+- name: Uninstall old docker versions
+  apt: name={{item}} state=absent
+  with_items:
+    - docker
+
+- name: Update apt
+  apt: update-cache=yes
+
+
